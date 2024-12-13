@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./navbar.scss";
+import {Link, NavLink} from "react-router-dom";
 import menuIcon from "./images/burger.svg";
 
 function Navbar() {
@@ -9,26 +10,26 @@ function Navbar() {
   };
   let menuData = [
     { name: "Home", src: "/" },
-    { name: "About Us", src: "/" },
-    { name: "Products", src: "/" },
-    { name: "Contact", src: "/" }
+    { name: "About", src: "about" },
+    { name: "Services", src: "services" },
+    { name: "Contact", src: "contact" },
   ];
 
   return (
     <nav className="navbar">
       <div className="container navbar__container">
-        <a href="/" className="navbar__logo">
+        <Link to="/" className="navbar__logo">
           Logo
-        </a>
+        </Link>
         <button onClick={showMenu} className="navbar__toggle">
           <img src={menuIcon} alt="burger" className="navbar__toggle_icon" />
         </button>
         <ul className={menuActive ? "navbar__items_show" : "navbar__items"}>
           {menuData.map((i) => (
             <li className="navbar__item">
-              <a href={i.src} className="navbar__link">
+              <NavLink onClick={showMenu} to={i.src} className="navbar__link">
                 {i.name}
-              </a>
+              </NavLink>
             </li>
           ))}
         </ul>

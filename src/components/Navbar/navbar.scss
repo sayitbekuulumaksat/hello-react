@@ -25,6 +25,10 @@
   }
   &__link {
     color: #fff;
+    &.active,
+    &:hover {
+      color: #a2ed77;
+    }
   }
 }
 @media screen and (max-width: 700px) {
