@@ -1,13 +1,13 @@
 import React from "react";
 import { useRef, useEffect } from "react";
-import { init } from 'ityped'
+import { init } from "ityped";
 
 function About() {
   const animateTextRef = useRef();
   useEffect(() => {
     init(animateTextRef.current, {
       showCursor: true,
-      strings: ["Frontend React разработчик"],
+      strings: [`Frontend React разработчик`],
       backDelay: 1500,
       backSpeed: 60,
     });

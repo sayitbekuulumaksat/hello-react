@@ -1,9 +1,21 @@
-import React from 'react'
+import React from "react";
+import "./services.scss";
 
 function Services() {
-  return (
-    <section><h2>Services</h2></section>
-  )
-}
+  const [buttonText, setText] = React.useState("Maksat");
+  const [classList, setClassList] = React.useState("");
 
-export default Services
+  const onCange = () => {
+    setText(`Maksatbek`);
+    setClassList("jashyl-btn");
+  };
+  return (
+    <section>
+      <h2>Services</h2>
+      <button className={classList} onClick={onCange}>
+        {buttonText}
+      </button>
+    </section>
+  );
+}
+export default Services;
